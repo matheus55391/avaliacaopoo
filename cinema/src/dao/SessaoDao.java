@@ -58,7 +58,7 @@ private ConexaoBanco conexao;
 		Statement stm;
 		try {			
 			stm = con.createStatement();
-			System.out.println("> running: select...");
+			System.out.println("> running...");
 			ResultSet rs = stm.executeQuery("select * from sessao");	
 			while (rs.next()) {
 				obj = new Sessao(rs.getInt(1), rs.getString(2), 

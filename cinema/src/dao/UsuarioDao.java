@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package dao;
 
 import java.sql.Connection;
@@ -17,10 +13,11 @@ import model.*;
 import util.*;
 
 
-/**
- *
- * @author rahke
+/*  ALUNOS:
+Emerson de Jesus Santos  - 16017157
+Matheus Felipe Vieira Santiago - 16016955
  */
+
 public class UsuarioDao {
 
     private ConexaoBanco conexao; 

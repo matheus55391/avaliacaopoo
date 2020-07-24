@@ -42,5 +42,9 @@ public class Usuario {
 		return id;
 	}
 	
+	public int getCargo() {
+		return cargo;
+	}
+	
 	
 }
