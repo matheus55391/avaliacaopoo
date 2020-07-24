@@ -1,6 +1,6 @@
 package index;
 
-import org.junit.jupiter.api.Test;
+
 
 import dao.*;
 import model.*;
@@ -16,28 +16,37 @@ public class AcaoMenuGerente {
 		String senha = Keyboard.readString("Senha: ");
 		UsuarioDao gdao = new UsuarioDao();
 		Usuario gerente = gdao.selectUsuarioLogin(login, senha);
-		if(gerente.getId() > 0) {			
-			int opcao;
-			do{
-				Keyboard.clrscr();
-				System.out.print("Bem vindo! ");
-				gerente.imprimir();
-				opcao = Keyboard.menu("Cadastrar Sessao/Listar Sessões/Atualizar Status da Sessao/Sair");
-				switch(opcao){
-	            case 1:
-	            	CadastrarSessao();
-	            	Keyboard.waitEnter();
-	            	break;
-	            case 2:	            	
-	            	ListarSessoes();
-	            	Keyboard.waitEnter();
-	            	break;	            
-	            case 3:	            	
-	            	AtualizarStatusSessao();
-	            	Keyboard.waitEnter();
-	            	break;
-				}				
-			}while(opcao < 3);
+		if(gerente.getId() > 0) 
+		{		
+			if (gerente.getCargo() > 0) 
+			{
+				int opcao;
+				do{
+					Keyboard.clrscr();
+					System.out.print("Bem vindo! ");
+					gerente.imprimir();
+					opcao = Keyboard.menu("Cadastrar Sessao/Listar Sessões/Atualizar Status da Sessao/Sair");
+					switch(opcao){
+		            case 1:
+		            	CadastrarSessao();
+		            	Keyboard.waitEnter();
+		            	break;
+		            case 2:	            	
+		            	ListarSessoes();
+		            	Keyboard.waitEnter();
+		            	break;	            
+		            case 3:	            	
+		            	AtualizarStatusSessao();
+		            	Keyboard.waitEnter();
+		            	break;
+					}				
+				}while(opcao < 3);
+			}
+			else
+			{
+				System.out.println("O USUARIO NÃO É UM ADMINISTRADOR !");
+			}
+			
 		}
 		else {
 			System.out.println("Login ou senha invalido!");
@@ -103,6 +112,6 @@ public class AcaoMenuGerente {
 		while(u != null) {			
 			u.imprimir();
 			u = (Usuario) lista.getNext();
-		}			
+		}	
 	}
 }

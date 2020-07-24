@@ -9,9 +9,14 @@ import javax.swing.JOptionPane;
 	    private String pass;
 	    
 	    public ConexaoBanco() {     
-	        url="jdbc:postgresql://localhost:5432/cinema";
+	    	/*url="jdbc:postgresql://localhost:5432/cinema";
 	        usr="usrcinema";
-	        pass="123456";
+	        pass="123456";*/
+	    	url="jdbc:postgresql://localhost:5432/";
+	        usr="postgres";
+	        pass="cfik7e";
+
+
 	    }
 	    
 	    protected Connection getConnection(){
